@@ -11,7 +11,7 @@ jQuery Basic:
 Create a test site using different jQuery functions.
 
 jQuery UI Basic:
-Create a test site using different jQuery UI elements including accordion draggable, sortable, and date picker. 
+Create a test site using different jQuery UI elements including accordion, draggable, sortable, and date picker. 
 
 jQuery Plugin Periodic Table Toolip:
 Use a jQuery plug-in.  I updated my periodic table to add tooltips that show the element name on hover using the Tipped jQuery plug-in.
