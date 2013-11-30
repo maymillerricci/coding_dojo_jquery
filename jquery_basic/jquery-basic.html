@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Exercise</title>
+	<link rel="stylesheet" href="jquery-basic.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+		//run the following functions/stuff when the document is ready
+		$(document).ready(function(){
+
+			$('#fade-in').click(function() {
+				$('h1').fadeIn();
+			});
+			$('#fade-out').click(function() {
+				$('h1').fadeOut();
+			});
+
+			$('#show').click(function() {
+				$('#p1').show();
+			});
+			$('#hide').click(function() {
+				$('#p1').hide();
+			});
+			$('#toggle').click(function() {
+				$('#p1').toggle();
+			});
+
+			$('#slide-up').click(function() {
+				$('#p2').slideUp();
+			});
+			$('#slide-down').click(function() {
+				$('#p2').slideDown();
+			});
+			$('#slide-toggle').click(function() {
+				$('#p2').slideToggle();
+			});
+
+			$('#add-class').click(function() {
+				$('h2').addClass('blue');
+			});
+			$('#remove-class').click(function() {
+				$('h2').removeClass('blue');
+			});
+			$('#toggle-class').click(function() {
+				$('h2').toggleClass('blue');
+			});
+			
+			//prevent buttons in form from automatically submitting
+			//method 1:
+			// $('form button').click(function(){
+			// 	return false;
+			// });
+			//method 2:
+			$('form button').click(function(e){ 
+				e.preventDefault();
+				// console.log(arguments);
+			});
+
+			$('#focus-name').click(function() {
+				$('#name').focus();
+			});
+			$('#focus-email').click(function() {
+				$('#email').focus();
+			});	
+
+			$('#name, #email').change(function() {
+				console.log("change!");
+			});
+			$('#may').click(function() {
+				$('#name').val('May');
+				alert('Your name is May.')
+			});
+
+			$("#serialize").click(function() {
+				$('#serial').text($('form').serialize());
+			});
+			$('#main-form').submit(function() {
+				alert('Your form was submitted!');
+			});
+
+			$('#before').click(function() {
+				$('#purple').before('before');
+			});
+			$('#prepend').click(function() {
+				$('#purple').prepend('prepend<br>');
+			});			
+			$('#append').click(function() {
+				$('#purple').append('append');
+			});
+			$('#after').click(function() {
+				$('#purple').after('after<br>');
+			});
+			
+			$('#change-image').click(function() {
+				$('#may-img').attr("src", "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQd1aihMV_RTkG-YEs9fAgiqVqkRY_mLmRvowlO1-v_HAPKrPsW");
+				$('#may-img').attr("alt", "whale");
+			});
+
+			$('#html').click(function() {
+				$(this).html('<span class="bold">NEW</span> HTML!');
+			});
+			$('#text').click(function() {
+				$(this).text('NEW TEXT!');
+			});
+
+			$('#aquamarine').click(function() {
+				$("ul").children().css( "background-color", "aquamarine");
+			});
+			$('#lightseagreen').click(function() {
+				$("ul li span").parent().css( "background-color", "lightseagreen");
+			});
+			$('#lightsteelblue').click(function() {
+				$("li").siblings().css( "background-color", "lightsteelblue");
+			});
+			
+			//click
+			// $("p").click(function(){
+			// 	console.log("clicked on p");
+			// })
+			//on click - better b/c not loading with page - just dealing with the item if it gets clicked
+			$(document).on("click", "p", function(){
+				console.log("clicked on p but better");
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div class="border">
+			<div>
+				<h1 class="green">Main Heading</h1>
+				<button id="fade-in">Fade In H1</button>
+				<button id="fade-out">Fade Out H1</button>
+			</div>
+			
+			<div>
+				<p id="p1">first paragraph</p>
+				<button id="show">Show P1</button>
+				<button id="hide">Hide P1</button>
+				<button id="toggle" class="toggle">Toggle P1</button>
+			</div>
+
+			<div>
+				<h2 class="blue">Second Heading</h2>
+				<button id="add-class">Add H2 Class</button>
+				<button id="remove-class">Remove H2 Class</button>
+				<button id="toggle-class" class="toggle">Toggle H2 Class</button>
+			</div>
+			
+			<div>
+			<p id="p2">second paragraph</p>
+				<button id="slide-up">Slide P2 Up</button>
+				<button id="slide-down">Slide P2 Down</button>
+				<button id="slide-toggle" class="toggle">Slide P2 Toggle</button>
+			</div>
+		</div>
+		
+		<div class="border">
+			<form id="main-form">
+				<h3>Form</h3>
+				<p>
+					<button id="focus-name">Focus on Name</button>
+					<button id="focus-email">Focus on Email</button>
+				</p>
+				<label>
+					Name:
+					<input id="name" type="text" name="name" value="name">
+				</label>
+				<p>
+					<button id='may'>My name is May. Click me.</button>
+				</p>
+				<label>
+					Email:
+					<input id="email" type="text" name="email" value="email">
+				</label>
+				<p>
+					<button id="serialize">Serialize</button>
+					<input type="submit" id="submit">
+				</p>
+			</form>
+			<div id="serial"></div>
+		</div>
+		
+		<div class="border">
+			<div id="purple">
+				<p>This is a purple box.</p>
+			</div>
+			<button id="before">Before</button>
+			<button id="prepend">Prepend</button>
+			<button id="append">Append</button>
+			<button id="after">After</button>
+		</div>
+
+		<div class="border">
+			<img id="may-img" src="http://batool.com.pk/wp-content/uploads/2013/05/may.jpg" alt="may">
+			<p>
+				<button id="change-image">Change Image</button>
+			</p>
+		</div>
+
+		<div class="border">
+			<p id="html">Click me to change my html.</p>
+			<p id="text">Click me to change my text.</p>
+		</div>
+
+		<div class="border">
+			<h3>Months</h3>
+			<ul>
+				<li><span class="bold">April</span> has 30 days.</li>
+				<li><span class="bold">May</span> has 31 days.</li>
+				<li><span class="bold">June</span> has 30 days.</li>
+			</ul>
+			<button id="aquamarine">Make us aquamarine (children).</button>
+			<button id="lightseagreen">Make us lightseagreen (parent).</button>
+			<button id="lightsteelblue">Make us lightsteelblue (siblings).</button>
+		</div>
+
+	</div>	
+</body>
+</html>

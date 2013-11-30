@@ -1,0 +1,21 @@
+* {
+	font-family: helvetica;
+}
+#wrapper {
+	width: 960px;
+	height: 960px;
+	margin: 0 auto;
+}
+h2 {
+	padding: 10px 0px;
+}
+img {
+	width: 250px;
+	height: 70px;
+}
+button {
+	font-size: 1.1em;
+}
+ul {
+	list-style-type: none;
+}

@@ -1,0 +1,40 @@
+#wrapper {
+	width: 960px;
+	margin: 0 auto;
+	/*background-color: gray;*/
+}
+button, #submit {
+	margin: 10px 0px;
+	background-color: lightgray;
+	padding: 3px;
+}
+button.toggle, #submit {
+	margin-left: 30px;
+}
+.green {
+	background-color: springgreen;
+}
+.blue {
+	background-color: royalblue;
+}
+#p1 {
+	background-color: teal;
+}
+#p2 {
+	background-color: slateblue;
+}
+div.border {
+	padding: 10px 0px;
+	border-bottom: 1px solid black;
+}
+#purple {
+	background-color: mediumpurple;
+	width: 100px;
+	height: 100px;
+	margin: 20px;
+	padding: 20px;
+	text-align: center;
+}
+span.bold {
+	font-weight: bold;
+}

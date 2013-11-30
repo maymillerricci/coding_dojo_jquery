@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Intermediate 2</title>
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/hot-sneaks/jquery-ui.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="jquery_intermediate_2.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// part 1 - sortable
+			$(".sortable").sortable();
+    		$(".sortable").disableSelection();
+    		// part 2, method 1 - siblings (my best way!)
+    		$(".cat").hide();
+    		$(".ninja").click(function() {
+    			$(this).hide();
+    			$(this).siblings().show();
+    		});
+    		$(".cat").click(function() {
+    			$(this).hide();
+    			$(this).siblings().show();
+    		});
+    		// part 2, method 2 - attribute (doesn't change back)
+    		$("#ninja_01").click(function() {
+    			$(this).attr("src", "images/cat_01.png");
+    		});
+    		$("#ninja_02").click(function() {
+    			$(this).attr("src", "images/cat_02.png");
+    		});
+    		$("#ninja_03").click(function() {
+    			$(this).attr("src", "images/cat_03.png");
+    		});
+    		$("#ninja_04").click(function() {
+    			$(this).attr("src", "images/cat_04.png");
+    		});
+    		$("#ninja_05").click(function() {
+    			$(this).attr("src", "images/cat_05.png");
+    		});
+    		// part 2, method 3 - substring/replace
+    		$(".ninja2").click(function() {
+    			var source = $(this).attr("src");
+    			var part = source.substr(7,3);
+    			if (part==="nja") {
+    				$(this).attr("src", source.replace("nja","cat"));
+    			}
+    			else if (part==="cat") {
+    				$(this).attr("src", source.replace("cat","nja"));
+    			}
+    		});
+    		//part 2, method 4 - substring/concatenate (doesn't change back)
+    		$(".ninja3").click(function() {
+    			var source = $(this).attr("src");
+    			var number = source.substr(11,2);
+    			$(this).attr("src", "images/cat_" + number + ".png");
+    		});
+		});
+	</script>
+</head>
+
+<body>
+	<div id="wrapper">
+		<h2>jQuery Intermediate Assignment 2 - Part 1 - Sortable Ninja</h2>
+		<ul class="sortable">
+			<li><img src="images/nja_01.png" alt="ninja01"></li>
+			<li><img src="images/nja_02.png" alt="ninja02"></li>
+			<li><img src="images/nja_03.png" alt="ninja03"></li>
+			<li><img src="images/nja_04.png" alt="ninja04"></li>
+			<li><img src="images/nja_05.png" alt="ninja05"></li>
+		</ul>
+		<h2>jQuery Intermediate Assignment 2 - Part 2 - Ninja/Cat Puzzle</h2>
+		<h4>Method 1 - Siblings</h4>
+		<ul>
+			<li class="ninja"><img src="images/nja_01.png" alt="ninja01"></li>
+			<li class="cat"><img src="images/cat_01.png" alt="cat01"></li>
+		</ul>
+		<ul>
+			<li class="ninja"><img src="images/nja_02.png" alt="ninja02"></li>
+			<li class="cat"><img src="images/cat_02.png" alt="cat02"></li>
+		</ul>
+		<ul>
+			<li class="ninja"><img src="images/nja_03.png" alt="ninja03"></li>
+			<li class="cat"><img src="images/cat_03.png" alt="cat03"></li>
+		</ul>
+		<ul>
+			<li class="ninja"><img src="images/nja_04.png" alt="ninja04"></li>
+			<li class="cat"><img src="images/cat_04.png" alt="cat04"></li>
+		</ul>
+		<ul>
+			<li class="ninja"><img src="images/nja_05.png" alt="ninja05"></li>
+			<li class="cat"><img src="images/cat_05.png" alt="cat05"></li>
+		</ul>
+		<h4>Method 2 - Attribute (doesn't change back)</h4>
+		<ul>
+			<li><img id="ninja_01" src="images/nja_01.png" alt="ninja01"></li>
+			<li><img id="ninja_02" src="images/nja_02.png" alt="ninja02"></li>
+			<li><img id="ninja_03" src="images/nja_03.png" alt="ninja03"></li>
+			<li><img id="ninja_04" src="images/nja_04.png" alt="ninja04"></li>
+			<li><img id="ninja_05" src="images/nja_05.png" alt="ninja05"></li>
+		</ul>
+		<h4>Method 3 - Substring/Replace</h4>
+		<ul>
+			<li><img class="ninja2" src="images/nja_01.png" alt="ninja01"></li>
+			<li><img class="ninja2" src="images/nja_02.png" alt="ninja02"></li>
+			<li><img class="ninja2" src="images/nja_03.png" alt="ninja03"></li>
+			<li><img class="ninja2" src="images/nja_04.png" alt="ninja04"></li>
+			<li><img class="ninja2" src="images/nja_05.png" alt="ninja05"></li>
+		</ul>
+		<h4>Method 4 - Substring/Concatenate (doesn't change back)</h4>
+		<ul>
+			<li><img class="ninja3" src="images/nja_01.png" alt="ninja01"></li>
+			<li><img class="ninja3" src="images/nja_02.png" alt="ninja02"></li>
+			<li><img class="ninja3" src="images/nja_03.png" alt="ninja03"></li>
+			<li><img class="ninja3" src="images/nja_04.png" alt="ninja04"></li>
+			<li><img class="ninja3" src="images/nja_05.png" alt="ninja05"></li>
+		</ul>
+	</div> <!--close wrapper-->	
+</body>
+</html>

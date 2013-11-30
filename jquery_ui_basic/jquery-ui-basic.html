@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery UI Exercise</title>
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/hot-sneaks/jquery-ui.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="jquery-ui-basic.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<!--<script src="jquery-1.10.2.min.js"></script>-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+	<script type="text/javascript">
+		
+		//run the following functions/stuff when the document is ready
+		$(document).ready(function(){
+			$(".sortable").sortable();
+    		$(".sortable").disableSelection();
+			$(".datepicker").datepicker();
+			$("#tabs").tabs();
+			$("#accordion").accordion();
+			$("#dialog").dialog();
+			$("#draggable").draggable();
+			$("#resizable").resizable();
+		});
+	</script>
+</head>
+
+<body>
+	<div id="wrapper">
+		<h2>Let's play with jQuery UI!</h2>
+		<h3>There are 2 different easy ways to embed a bunch of content in our website in jQuery UI.</h3>
+		<h4>Let's start with tabs!</h4>
+		<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1">Sortable!</a></li>
+				<li><a href="#tabs-2">Date Picker!!</a></li>
+				<li><a href="#tabs-3">Draggable!!!</a></li>
+			</ul>
+			<div id="tabs-1">
+				<p>Please reorder into the reverse order (7-1)!</p>
+				<ul class="sortable">
+					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+				</ul>
+			</div> <!--close tabs-1-->
+			<div id="tabs-2">
+				<p>When do you want to travel?</p>
+				<p>Leaving: <input type="text" class="datepicker" /></p>
+				<p>Returning: <input type="text" class="datepicker" /></p>
+			</div> <!--close tabs-2-->
+			<div id="tabs-3">
+				<div id="draggable" class="ui-widget-content">
+  					<p>Drag me around</p>
+				</div>
+			</div> <!--close tabs-3-->
+		</div> <!--close tabs-->
+
+		<h4>Now let's try accordian!!</h4>
+		<div id="accordion">
+			<h3>Date Picker!!</h3>
+			<div>
+				<p>When do you want to travel?</p>
+				<p>Leaving: <input type="text" class="datepicker" /></p>
+				<p>Returning: <input type="text" class="datepicker" /></p>
+			</div>
+			<h3>Sortable!</h3>
+			<div>
+				<p>Please reorder into the reverse order (7-1)!</p>
+				<ul class="sortable">
+					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+					<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+				</ul>
+			</div>
+			<h3>Resizable</h3>
+			<div id="resizable" class="ui-widget-content">
+  				<h3 class="ui-widget-header">Resizable</h3>
+			</div>
+		</div> <!--close accordian-->	
+
+		<div id="dialog" title="Dialog Box">
+  			<p>Hello, I am a dialog box.  How are you today?</p>
+		</div>
+	</div> <!--close wrapper-->	
+</body>
+</html>

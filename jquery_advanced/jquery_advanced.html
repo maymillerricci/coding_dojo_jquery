@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Advanced</title>
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/hot-sneaks/jquery-ui.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="jquery_advanced.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".back").hide();
+			$(".front").mouseenter(function() {
+				$(this).fadeOut(function() {
+					$(this).siblings().fadeIn();
+				});
+			});
+			$(".back").mouseleave(function() {
+				$(this).fadeOut(function() {
+					$(this).siblings().fadeIn();
+				});
+			});
+
+			$("form").submit(function(e) {
+				e.preventDefault();
+				var new_first_name = $("#input_first_name").val();
+				var new_last_name = $("#input_last_name").val();
+				var new_email_address = $("#input_email_address").val();
+				var new_contact_number = $("#input_contact_number").val();
+				$("tbody").append("<tr><td>" + new_first_name + "</td><td>" + new_last_name + "</td><td>" + new_email_address + "</td><td>" + new_contact_number + "</td></tr>")
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div id="wrapper">
+	<h3>jQuery Advanced Assignment - Part 1 - Fronts and Backs</h3>
+	<p>Hover over a coin to see its opposite side (and stop hovering to go back)!</p>
+	<ul>
+		<li class="front" id="penny_front"><img src="http://i.istockimg.com/file_thumbview_approve/4124636/1/stock-photo-4124636-penny-with-path.jpg" alt="penny_front"></li>
+		<li class="back" id="penny_back"><img src="http://i.istockimg.com/file_thumbview_approve/5900375/1/stock-photo-5900375-penny-series-with-clipping-path.jpg" alt="penny_back"></li>
+	</ul>
+	<ul>
+		<li class="front" id="nickel_front"><img src="http://i.istockimg.com/file_thumbview_approve/24506543/1/stock-photo-24506543-obverse-of-the-1995-jefferson-silver-nickel.jpg" alt="nickel_front"></li>
+		<li class="back" id="nickel_back"><img src="http://i.istockimg.com/file_thumbview_approve/9550815/1/stock-illustration-9550815-us-nickel.jpg" alt="nickel_back"></li>
+	</ul>
+	<ul>
+		<li class="front" id="dime_front"><img src="http://i.istockimg.com/file_thumbview_approve/25781535/1/stock-photo-25781535-obverse-of-the-1995-roosevelt-silver-dime.jpg" alt="dime_front"></li>
+		<li class="back" id="dime_back"><img src="http://i.istockimg.com/file_thumbview_approve/9541627/1/stock-illustration-9541627-dime-coin.jpg" alt="dime_back"></li>
+	</ul>
+	<ul>
+		<li class="front" id="quarter_front"><img src="http://i.istockimg.com/file_thumbview_approve/16537198/1/stock-illustration-16537198-u-s-quarter-coin.jpg" alt="quarter_front"></li>
+		<li class="back" id="quarter_back"><img src="http://i.istockimg.com/file_thumbview_approve/4913956/1/stock-photo-4913956-united-states-quarter-coin.jpg" alt="quarter_back"></li>
+	</ul>
+	
+	<h3>jQuery Advanced Assignment - Part 2 - Append to Table</h3>
+	<table>
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email Address</th>
+				<th>Contact Number</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>John Oliver</td>
+				<td>Rosales</td>
+				<td>jrosales@village88.com</td>
+				<td>+63-918-123-1234</td>
+			</tr>
+			<tr>
+				<td>KB</td>
+				<td>Tonel</td>
+				<td>ktonel@village88.com</td>
+				<td>+63-922-987-6543</td>
+			</tr>
+			<tr>
+				<td>Michael</td>
+				<td>Choi</td>
+				<td>mchoi@village88.com</td>
+				<td>+1-800-936-5700</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<h4>Form</h4>
+	<p>Submit the form below to add a new row with contact information to the table.</p>
+	<form>
+		<p>
+			<label>First Name: </label> <input type="text" id="input_first_name">
+		</p>
+		<p>
+			<label>Last Name: </label> <input type="text" id="input_last_name">
+		</p>
+		<p>
+			<label>Email Address: </label> <input type="text" id="input_email_address">
+		</p>
+		<p>
+			<label>Contact Number: </label> <input type="text" id="input_contact_number">
+		</p>
+		<p>
+			<input type="submit">
+		</p>
+	</form>
+	</div> <!--close wrapper-->	
+</body>
+</html>
